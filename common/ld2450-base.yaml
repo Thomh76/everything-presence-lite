@@ -800,7 +800,7 @@ sensor:
     filters:
       - delta: 1
       - throttle: 1s
-    internal: true
+    mqtt: null
   - platform: template
     name: "Target 1 X"
     id: target1_x
