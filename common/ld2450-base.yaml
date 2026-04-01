@@ -276,21 +276,21 @@ binary_sensor:
     id: zone2_occupancy
     filters:
       - delayed_off: !lambda return (id(zone_2_off_delay).state * 1000);
-    disabled_by_default: true
+    #disabled_by_default: true
   - platform: template
     name: "Zone 3 Occupancy"
     device_class: occupancy
     id: zone3_occupancy
     filters:
       - delayed_off: !lambda return (id(zone_3_off_delay).state * 1000);
-    disabled_by_default: true
+    #disabled_by_default: true
   - platform: template
     name: "Zone 4 Occupancy"
     device_class: occupancy
     id: zone4_occupancy
     filters:
       - delayed_off: !lambda return (id(zone_4_off_delay).state * 1000);
-    disabled_by_default: true
+    #disabled_by_default: true
 
   - platform: template
     name: "Target 1 Active"
@@ -308,6 +308,7 @@ binary_sensor:
     name: "Assumed Present"
     id: assumed_present
     entity_category: diagnostic
+    internal: true
 
 number:
   - platform: template
@@ -799,6 +800,7 @@ sensor:
     filters:
       - delta: 1
       - throttle: 1s
+    internal: true
   - platform: template
     name: "Target 1 X"
     id: target1_x
@@ -807,6 +809,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 1 Y"
     id: target1_y
@@ -815,6 +818,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 1 Speed"
     id: target1_speed
@@ -823,6 +827,7 @@ sensor:
     state_class: measurement
     device_class: speed
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 1 Resolution"
     id: target1_resolution
@@ -831,6 +836,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 2 X"
     id: target2_x
@@ -839,6 +845,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 2 Y"
     id: target2_y
@@ -847,6 +854,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 2 Speed"
     id: target2_speed
@@ -855,6 +863,7 @@ sensor:
     state_class: measurement
     device_class: speed
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 2 Resolution"
     id: target2_resolution
@@ -863,6 +872,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 3 X"
     id: target3_x
@@ -871,6 +881,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 3 Y"
     id: target3_y
@@ -879,6 +890,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 3 Speed"
     id: target3_speed
@@ -887,6 +899,7 @@ sensor:
     state_class: measurement
     device_class: speed
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 3 Resolution"
     id: target3_resolution
@@ -895,6 +908,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 1 Angle"
     id: target1_angle
@@ -902,6 +916,7 @@ sensor:
     unit_of_measurement: '°'
     state_class: measurement
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 2 Angle"
     id: target2_angle
@@ -909,6 +924,7 @@ sensor:
     unit_of_measurement: '°'
     state_class: measurement
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 3 Angle"
     id: target3_angle
@@ -916,6 +932,7 @@ sensor:
     unit_of_measurement: '°'
     state_class: measurement
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 1 Distance"
     id: target1_distance
@@ -924,6 +941,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 2 Distance"
     id: target2_distance
@@ -932,6 +950,7 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Target 3 Distance"
     id: target3_distance
@@ -940,12 +959,14 @@ sensor:
     state_class: measurement
     device_class: distance
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Zone 1 Target Count"
     id: zone1_target_count
     accuracy_decimals: 0
     unit_of_measurement: " "
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Zone 2 Target Count"
     id: zone2_target_count
@@ -953,6 +974,7 @@ sensor:
     disabled_by_default: true
     unit_of_measurement: " "
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Zone 3 Target Count"
     id: zone3_target_count
@@ -960,6 +982,7 @@ sensor:
     disabled_by_default: true
     unit_of_measurement: " "
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Zone 4 Target Count"
     id: zone4_target_count
@@ -967,6 +990,7 @@ sensor:
     disabled_by_default: true
     unit_of_measurement: " "
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Occupancy Mask 1 Target Count"
     id: occupancy_mask_1_target_count
@@ -974,6 +998,7 @@ sensor:
     disabled_by_default: true
     unit_of_measurement: " "
     entity_category: diagnostic
+    internal: true
   - platform: template
     name: "Occupancy Mask 2 Target Count"
     id: occupancy_mask_2_target_count
@@ -981,6 +1006,7 @@ sensor:
     disabled_by_default: true
     unit_of_measurement: " "
     entity_category: diagnostic
+    internal: true
 
 select:
   - platform: template
