@@ -319,7 +319,7 @@ number:
     optimistic: True
     restore_value: True
     unit_of_measurement: "s"
-    initial_value: 15
+    initial_value: 0
     entity_category: config
   - platform: template
     name: "Max Distance"
@@ -517,7 +517,7 @@ number:
     optimistic: True
     restore_value: True
     unit_of_measurement: "s"
-    initial_value: 15
+    initial_value: 0
     entity_category: config
 
   - platform: template
@@ -573,7 +573,7 @@ number:
     optimistic: True
     restore_value: True
     unit_of_measurement: "s"
-    initial_value: 15
+    initial_value: 0
     disabled_by_default: true
     entity_category: config
 
@@ -630,7 +630,7 @@ number:
     optimistic: True
     restore_value: True
     unit_of_measurement: "s"
-    initial_value: 15
+    initial_value: 0
     disabled_by_default: true
     entity_category: config
 
@@ -687,7 +687,7 @@ number:
     optimistic: True
     restore_value: True
     unit_of_measurement: "s"
-    initial_value: 15
+    initial_value: 0
     disabled_by_default: true
     entity_category: config
 
@@ -796,6 +796,9 @@ sensor:
     accuracy_decimals: 0
     update_interval: never
     entity_category: diagnostic
+    filters:
+      - delta: 1
+      - throttle: 1s
   - platform: template
     name: "Target 1 X"
     id: target1_x
